@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+require 'rspec'
+require 'stringio'
+require './main'
+
+# rubocop:disable Layout/FirstHashElementIndentation
+test = {
+  # Write the test code here.
+}
+# rubocop:enable Layout/FirstHashElementIndentation
+
+RSpec.describe do
+  test.each_with_index do |(k, v), i|
+    example "入力例#{i + 1}" do
+      allow(ARGF).to receive(:gets) { k.to_s }
+      expect do
+        main
+      rescue StandardError => e
+        puts e.message
+      end.to output(v).to_stdout
+    end
+  end
+end

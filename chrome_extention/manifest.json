@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "IO Example to Hash for AtRubyCoder",
+  "version": "1.0",
+  "description": "IO Example to Hash for AtRubyCoder",
+  "content_scripts": [
+    {
+      "matches": ["https://atcoder.jp/*"],
+      "js": ["index.js"]
+    }
+  ]
+}
