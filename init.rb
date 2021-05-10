@@ -16,7 +16,7 @@ while true
 end
 
 Dir.mkdir(dir_name)
-FileUtils.cp(%w[template/main.rb template/cli.rb template/test.txt], dir_name)
+FileUtils.cp(%w[template/main.rb template/clt.rb template/test.txt], dir_name)
 
 test_path = "#{dir_name}/test.txt"
 buffer = File.open(test_path, 'r') { |f| f.read } # rubocop:disable Style/SymbolProc
