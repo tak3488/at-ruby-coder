@@ -15,7 +15,7 @@ RSpec.describe do
     example "入力例#{i + 1}" do
       allow(ARGF).to receive(:gets) { k.to_s }
       expect do
-        main
+        RubyAtCoder.main
       rescue StandardError => e
         puts e.message
       end.to output(v).to_stdout

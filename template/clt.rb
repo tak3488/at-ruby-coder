@@ -2,17 +2,17 @@
 
 # rubocop:disable Metrics/MethodLength
 def copy_code
-  text = ''
+  text = "class RubyAtCoder\n"
   flg = false
   File.foreach 'main.rb' do |l|
     l.strip!
-    if l == 'def main'
+    if l == 'class RubyAtCoder'
       flg = true
     elsif flg == true && !l.empty?
       text += "#{l}\n"
     end
   end
-  IO.popen('pbcopy', 'w') { _1.print(text[0..-5]) }
+  IO.popen('pbcopy', 'w') { _1.print(text[0..-2]) }
 end
 # rubocop:enable Metrics/MethodLength
 

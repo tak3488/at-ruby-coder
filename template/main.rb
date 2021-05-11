@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
-def main
-  # Write your code here.
+# Class for the test
+class RubyAtCoder
+  def self.main
+    # Write your code here.
+  end
 end
+
+RubyAtCoder.main
