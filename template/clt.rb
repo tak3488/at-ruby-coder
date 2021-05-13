@@ -1,20 +1,13 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/MethodLength
 def copy_code
-  text = "class RubyAtCoder\n"
-  flg = false
+  text = ''
   File.foreach 'main.rb' do |l|
     l.strip!
-    if l == 'class RubyAtCoder'
-      flg = true
-    elsif flg == true && !l.empty?
-      text += "#{l}\n"
-    end
+    text += "#{l}\n" if !l.empty? && !l.start_with?('# ')
   end
   IO.popen('pbcopy', 'w') { _1.print(text[0..-2]) }
 end
-# rubocop:enable Metrics/MethodLength
 
 puts '何をしますか？'
 puts ''
